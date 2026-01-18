@@ -234,3 +234,23 @@ $RECYCLE.BIN/
 *.lnk
 
 
+
+# ---- Quartus generated output (do not commit) ----
+db/
+incremental_db/
+output_files/
+
+*.rdb
+*.cmp
+*.qws
+*.sof
+*.pof
+*.jdi
+*.pin
+*.summary
+*.smsg
+*.done
+*.rpt
+
+# editor / Quartus backups
+*.bak

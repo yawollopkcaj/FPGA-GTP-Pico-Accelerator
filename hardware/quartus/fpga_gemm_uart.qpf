@@ -1,0 +1,3 @@
+QUARTUS_VERSION = "25.1"
+DATE = ""
+PROJECT_REVISION = "fpga_gemm_uart"
