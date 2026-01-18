@@ -18,7 +18,9 @@ def layer_norm(x, g, b, eps: float = 1e-5):
 
 
 def linear(x, w, b):  # [m, in], [in, out], [out] -> [m, out]
-    return x @ w + b
+    y = x @ w + b
+
+    return y
 
 
 def ffn(x, c_fc, c_proj):  # [n_seq, n_embd] -> [n_seq, n_embd]
