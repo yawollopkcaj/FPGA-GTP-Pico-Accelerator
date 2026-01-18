@@ -1,4 +1,9 @@
 import numpy as np
+from accelerator import fpga_gemm_tile, cpu_reference_int8
+
+TILE_M = 4 # how many rows of tokens we take
+TILE_K = 4 # how many input features we take
+TILE_N = 4 # how many output features we take
 
 
 def gelu(x):
@@ -18,7 +23,19 @@ def layer_norm(x, g, b, eps: float = 1e-5):
 
 
 def linear(x, w, b):  # [m, in], [in, out], [out] -> [m, out]
+    # still perform the calculations on the cpu so it works
     y = x @ w + b
+
+    # pick a tiny tile of the matrix multiply to send to the FPGA
+    A = x[:TILE_M, :TILE_K]
+    B = w[:TILE_K, :TILE_N]
+
+    c_cpu = cpu_reference_int8(A,B)
+    c_fpga = fpga_gemm_tile(A,B)
+
+    max_err = np.max(np.abs(c_cpu - c_fpga))
+    if max_err != 0:
+        print("Not perfect match, has error: ", max_err)
 
     return y
 
