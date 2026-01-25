@@ -66,7 +66,7 @@ LLM inference is dominated by matrix multiplication (attention and linear layers
   <sub><i>Scaled Dot-Product Attention Diagram</i></sub>
 </p>
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/417b9bd9-37f4-4b59-807e-82215eea52f2" width="600" />
+  <img src="https://github.com/user-attachments/assets/417b9bd9-37f4-4b59-807e-82215eea52f2" width="200" />
 </p>
 
 The system optimizes the **Scaled Dot-Product Attention** mechanism found in Transformer models, which requires a high volume of multiplications. By implementing hardware-level MatMul units, Q-Tensor accelerates the core mathematical requirements of modern LLMs.
