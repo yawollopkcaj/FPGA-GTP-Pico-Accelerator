@@ -25,7 +25,7 @@ LLM inference is dominated by matrix multiplication (attention and linear layers
 | **Utilization** | Sequential / Cache-dependent | 100% Utilization |
 
 <p align="center">
-  <span style="opacity: 0.6;">
+  <span style="opacity: 0.2;">
     <i>CPU vs. FPGA runtime benchmark</i>
   </span>
 </p>
