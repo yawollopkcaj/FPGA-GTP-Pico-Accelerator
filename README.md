@@ -4,11 +4,11 @@
 
 **Project Q-Tensor** is a high-performance, energy-efficient hybrid inference engine designed to accelerate Large Language Model (LLM) operations using FPGA-based **systolic arrays**. By offloading computationally intensive General Matrix-Matrix Multiplication (GEMM) tasks from a host CPU to custom RTL, this project addresses the "Von Neumann Tax" (the performance bottleneck caused by constant data movement between the processor and main memory).
 
-## The Problem
+## The Problem We Set Out to Solve
 
 LLM inference is dominated by matrix multiplication (attention and linear layers). On conventional CPUs, each multiply-accumulate step requires fetching instructions and operands from memory, creating significant overhead that limits throughput and wastes energy. The CPU is idle (waiting for memory transfer) more than actively computing.
 
-## The Solution
+## Solution Highlights
 
 * **Custom Systolic Array:** Developed a scalable systolic array architecture in Verilog to maximize data reuse and achieve 100% compute utilization during matrix operations.
 * **Hybrid Inference Engine:** Engineered a system that allows for a hybrid backend using Int8 quantization to offload MAC operations.
@@ -23,6 +23,10 @@ LLM inference is dominated by matrix multiplication (attention and linear layers
 | **Energy per $4 \times 4$ GEMM Tile** | $\sim 26\ nJ$ | $\sim 12\ nJ$ |
 | **Compute Time (Micro-benchmark)** | $2.33\ \mu s$ (Int8) | $\sim 0.20\ \mu s$ (Est.) |
 | **Utilization** | Sequential / Cache-dependent | 100% Utilization |
+
+<img width="1400" height="800" alt="image" src="https://github.com/user-attachments/assets/d3e0c325-b593-4fb4-9a86-a27e6249023c" />
+
+<img width="2000" height="600" alt="image" src="https://github.com/user-attachments/assets/ac8456aa-6013-4bd6-b562-2831ec91dd08" />
 
 *Note: The current system bottleneck is the UART link, resulting in the hardware being idle 99% of the time while waiting for data. The underlying architecture, however, proves that hardware-optimized math is significantly more efficient than general-purpose CPU compute.*
 
