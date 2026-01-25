@@ -10,6 +10,13 @@ LLM inference is dominated by matrix multiplication (attention and linear layers
 
 ## Solution Highlights
 
+<p align="center">
+  <sub><i>Data Movement on the Systolic Array and FPGA Plane in Operation</i></sub>
+</p>
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/53bc1dd6-7ad0-4c98-80dd-dd503108c81f" width="600" />
+</p>
+
 * **Custom Systolic Array:** Developed a scalable systolic array architecture in Verilog to maximize data reuse and achieve 100% compute utilization during matrix operations.
 * **Hybrid Inference Engine:** Engineered a system that allows for a hybrid backend using Int8 quantization to offload MAC operations.
 * **Energy Efficiency:** Achieved a **2.2X reduction in energy consumption** per $4 \times 4$ GEMM tile compared to traditional CPU execution baseline (analysis done with Quartus Prime Power Analyzer).
@@ -55,6 +62,13 @@ LLM inference is dominated by matrix multiplication (attention and linear layers
   
 ## Architecture Overview
 
+<p align="center">
+  <sub><i>Scaled Dot-Product Attention Diagram</i></sub>
+</p>
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/417b9bd9-37f4-4b59-807e-82215eea52f2" width="600" />
+</p>
+
 The system optimizes the **Scaled Dot-Product Attention** mechanism found in Transformer models, which requires a high volume of multiplications. By implementing hardware-level MatMul units, Q-Tensor accelerates the core mathematical requirements of modern LLMs.
 
 <p align="center">
@@ -80,4 +94,4 @@ The internal RTL architecture consists of modules synchronized for deterministic
 * **Verification Harness**: Built a CPU reference path that runs the same quantized GEMM and compares element-by-element against FPGA output, ensuring bit-exact correctness across randomized tests.
   
 ---
-*Developed by Jack Polloway and Faraz Fashizedeh for nwHacks 2026.*
+*Developed by Jack Polloway and Faraz Fashizedeh partially for nwHacks 2026.*
