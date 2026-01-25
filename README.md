@@ -49,7 +49,7 @@ LLM inference is dominated by matrix multiplication (attention and linear layers
 
 ## Architecture Overview
 
-The system optimizes the **Scaled Dot-Product Attention** mechanism found in Transformer models, which requires a high volume of multiplications. By implementing hardware-level **MatMul** units, Q-Tensor accelerates the core mathematical requirements of modern LLMs.
+The system optimizes the **Scaled Dot-Product Attention** mechanism found in Transformer models, which requires a high volume of multiplications. By implementing hardware-level MatMul units, Q-Tensor accelerates the core mathematical requirements of modern LLMs.
 
 <p align="center">
   <sub><i>High-Level Component Diagram</i></sub>
@@ -59,18 +59,13 @@ The system optimizes the **Scaled Dot-Product Attention** mechanism found in Tra
 </p>
 
 ### FPGA Component Diagram
-The internal RTL architecture consists of modules synchronized for deterministic I/O[:
-1.  **UART Input Driver:** Handles the 115200 baud link for incoming data.
-2.  **Controller:** Orchestrates the data flow between the input driver and the compute core.
-3.  **Input Storage:** Acts as a buffer to feed the systolic array wavefront.
-4.  **Systolic Array Core:** The primary engine for parallelized matrix multiplication.
-5.  **Output Packer:** Collects processed data to be sent back via the UART output driver.
-
-
-## Roadmap: Toward "Net Zero Autonomy"
-The roadmap to evolve Q-Tensor into a production-grade LLM accelerator includes:
-* **Phase 1:** Replacing the UART connection with high-bandwidth **PCIe or DMA** to eliminate I/O bottlenecks.
-* **Phase 2:** Transitioning to fully FPGA-based calculations for large-scale $1M \times 1M$ GEMM operations.
+The internal RTL architecture consists of modules synchronized for deterministic I/O:
+*  **UART Rx:** Handles the 115200 baud link for incoming data.
+*  **Controller:** Orchestrates the data flow between the input driver and the compute core.
+*  **Input Storage:** Acts as a buffer to feed the systolic array wavefront.
+*  **Systolic Array Core:** The primary engine for parallelized matrix multiplication.
+*  **Output Packer:** Collects processed data to be sent back via the UART output driver.
+*  **UART Tx:** Handles the 115200 baud link for outgoing data.
 
 ## Tech Stack
 * **Hardware Description:** Verilog / RTL
