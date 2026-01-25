@@ -24,9 +24,21 @@ LLM inference is dominated by matrix multiplication (attention and linear layers
 | **Compute Time (Micro-benchmark)** | $2.33\ \mu s$ (Int8) | $\sim 0.20\ \mu s$ (Est.) |
 | **Utilization** | Sequential / Cache-dependent | 100% Utilization |
 
-<img width="1400" height="800" alt="image" src="https://github.com/user-attachments/assets/d3e0c325-b593-4fb4-9a86-a27e6249023c" />
+<p align="center">
+  <span style="opacity: 0.6;">
+    <i>CPU vs. FPGA runtime benchmark</i>
+  </span>
+</p>
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/d3e0c325-b593-4fb4-9a86-a27e6249023c" width="600" />
+</p>
 
-<img width="2000" height="600" alt="image" src="https://github.com/user-attachments/assets/ac8456aa-6013-4bd6-b562-2831ec91dd08" />
+<p align="center">
+<caption><i>Figure 4: OCR Network Architecture</i></caption>
+</p>
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/ac8456aa-6013-4bd6-b562-2831ec91dd08" width="600" />
+</p>
 
 *Note: The current system bottleneck is the UART link, resulting in the hardware being idle 99% of the time while waiting for data. The underlying architecture, however, proves that hardware-optimized math is significantly more efficient than general-purpose CPU compute.*
 
