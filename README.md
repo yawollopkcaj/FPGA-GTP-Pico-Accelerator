@@ -49,7 +49,7 @@ LLM inference is dominated by matrix multiplication (attention and linear layers
   <sub><i>Proof of the Primary Bottleneck in the Current Implementation</i></sub>
 </p>
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/472b30b5-ede4-4b56-82b5-5a0ad672b63b" width="600" />
+  <img src="https://github.com/user-attachments/assets/472b30b5-ede4-4b56-82b5-5a0ad672b63b" width="400" />
 </p>
 
 *Note: The current system bottleneck is the UART link, resulting in the hardware being idle 99% of the time while waiting for data. The underlying architecture, however, proves that hardware-optimized math is significantly more efficient than general-purpose CPU compute.*
