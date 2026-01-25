@@ -6,7 +6,7 @@
 
 ## The Problem We Set Out to Solve
 
-LLM inference is dominated by matrix multiplication operations (GEMMs) within attention and linear layers. On general-purpose CPUs (Von Neumann architectures), this workload incurs significant control overhead, as substantial energy is spent on instruction fetching and decoding rather than arithmetic. Furthermore, the generative phase of LLMs is memory-bound due to low arithmetic intensity; the processor is frequently stalled waiting for weights to be fetched from memory, making DRAM bandwidth—rather than compute capacity—the primary bottleneck. This issue has been addressed in large-scale data centers by Google's TPU (or NVIDIA's Tensor Cores), but the average developer is stuck using unoptimized hardware"
+LLM inference is dominated by matrix multiplication operations (GEMMs) within attention and linear layers. On general-purpose CPUs (Von Neumann architectures), this workload incurs significant control overhead, as substantial energy is spent on instruction fetching and decoding rather than arithmetic. Furthermore, the generative phase of LLMs is memory-bound due to low arithmetic intensity; the processor is frequently stalled waiting for weights to be fetched from memory, making DRAM bandwidth—rather than compute capacity—the primary bottleneck. 
 
 <p align="center">
   <sub><i>Standard Memory Hiarchy Design</i></sub>
@@ -14,6 +14,8 @@ LLM inference is dominated by matrix multiplication operations (GEMMs) within at
 <p align="center">
   <img src="https://github.com/user-attachments/assets/f8b9e9ff-cad9-4119-8352-288286721726" width="400" />
 </p>
+
+*This issue has been addressed in large-scale data centers by Google's TPU (or NVIDIA's Tensor Cores), but the average developer is stuck using "unoptimized hardware"*
 
 ## Solution Highlights
 
