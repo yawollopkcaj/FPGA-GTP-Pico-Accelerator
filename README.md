@@ -25,16 +25,14 @@ LLM inference is dominated by matrix multiplication (attention and linear layers
 | **Utilization** | Sequential / Cache-dependent | 100% Utilization |
 
 <p align="center">
-  <span style="opacity: 0.2;">
-    <i>CPU vs. FPGA runtime benchmark</i>
-  </span>
+  <sub><i>CPU vs. FPGA runtime benchmark</i></sub>
 </p>
 <p align="center">
   <img src="https://github.com/user-attachments/assets/d3e0c325-b593-4fb4-9a86-a27e6249023c" width="600" />
 </p>
 
 <p align="center">
-  <sub><i>Figure 4: OCR Network Architecture</i></sub>
+  <sub><i>Proof of the Primary Bottleneck in the Current Implementation</i></sub>
 </p>
 <p align="center">
   <img src="https://github.com/user-attachments/assets/ac8456aa-6013-4bd6-b562-2831ec91dd08" width="600" />
