@@ -34,7 +34,7 @@ LLM inference is dominated by matrix multiplication (attention and linear layers
 </p>
 
 <p align="center">
-<caption><i>Figure 4: OCR Network Architecture</i></caption>
+  <sub><i>Figure 4: OCR Network Architecture</i></sub>
 </p>
 <p align="center">
   <img src="https://github.com/user-attachments/assets/ac8456aa-6013-4bd6-b562-2831ec91dd08" width="600" />
