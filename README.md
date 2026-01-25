@@ -32,6 +32,13 @@ LLM inference is dominated by matrix multiplication (attention and linear layers
 </p>
 
 <p align="center">
+  <sub><i>Energy per 4x4 GEMM (Quartus Prime Power Analyzer)</i></sub>
+</p>
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/4f12b3a4-f8d4-4676-872f-bebfe1e75780" width="600" />
+</p>
+
+<p align="center">
   <sub><i>Proof of the Primary Bottleneck in the Current Implementation</i></sub>
 </p>
 <p align="center">
