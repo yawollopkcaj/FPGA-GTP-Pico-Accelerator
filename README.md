@@ -115,5 +115,7 @@ To showcase the system end-to-end, we built a lightweight web interface that all
 
 **[1]** N. P. Jouppi *et al.*, "In-datacenter performance analysis of a tensor processing unit," in *Proc. 44th Annu. Int. Symp. Comput. Archit. (ISCA)*, Toronto, ON, Canada, 2017, pp. 1–12. Available: https://arxiv.org/abs/1704.04760
 
+**[2]** S. Markidis *et al.*, "NVIDIA Tensor Core programmability, performance & precision," in *Proc. IEEE Int. Parallel Distrib. Process. Symp. Workshops (IPDPSW)*, Vancouver, BC, Canada, 2018, pp. 522–531. Available: https://arxiv.org/abs/1803.04014
+
 ---
 *Developed by Jack Polloway and Faraz Fashizedeh partially for nwHacks 2026.*
