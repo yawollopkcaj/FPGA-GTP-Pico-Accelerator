@@ -51,6 +51,13 @@ LLM inference is dominated by matrix multiplication (attention and linear layers
 
 The system optimizes the **Scaled Dot-Product Attention** mechanism found in Transformer models, which requires a high volume of multiplications. By implementing hardware-level **MatMul** units, Q-Tensor accelerates the core mathematical requirements of modern LLMs.
 
+<p align="center">
+  <sub><i>High-Level Component Diagram</i></sub>
+</p>
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/6817be4f-8d0b-4c37-b2e9-73fd62d8cf30" width="600" />
+</p>
+
 ### FPGA Component Diagram
 The internal RTL architecture consists of modules synchronized for deterministic I/O[:
 1.  **UART Input Driver:** Handles the 115200 baud link for incoming data.
