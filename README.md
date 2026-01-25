@@ -6,7 +6,7 @@
 
 ## The Problem We Set Out to Solve
 
-LLM inference is dominated by matrix multiplication operations (GEMMs) within attention and linear layers. On general-purpose CPUs (Von Neumann architectures), this workload incurs significant control overhead, as substantial energy is spent on instruction fetching and decoding rather than arithmetic. Furthermore, the generative phase of LLMs is memory-bound due to low arithmetic intensity; the processor is frequently stalled waiting for weights to be fetched from memory, making DRAM bandwidth—rather than compute capacity—the primary bottleneck."
+LLM inference is dominated by matrix multiplication operations (GEMMs) within attention and linear layers. On general-purpose CPUs (Von Neumann architectures), this workload incurs significant control overhead, as substantial energy is spent on instruction fetching and decoding rather than arithmetic. Furthermore, the generative phase of LLMs is memory-bound due to low arithmetic intensity; the processor is frequently stalled waiting for weights to be fetched from memory, making DRAM bandwidth—rather than compute capacity—the primary bottleneck. This issue has been addressed in large-scale data centers by Google's TPU (or NVIDIA's Tensor Cores), but the average developer is stuck using unoptimized hardware"
 
 <p align="center">
   <sub><i>Standard Memory Hiarchy Design</i></sub>
@@ -102,7 +102,7 @@ The internal RTL architecture consists of modules synchronized for deterministic
 
 ## Demo
 
-*To showcase the system end-to-end, we built a lightweight web interface that allows users to enter prompts and run live GPT-2 inference through the hybrid CPU–FPGA pipeline. The frontend acts as a control and visualization layer, sending prompts to the backend, displaying generated text in real time, and surfacing performance analytics such as token counts, latency, and FPGA accelerator utilization for each run.*
+To showcase the system end-to-end, we built a lightweight web interface that allows users to enter prompts and run live GPT-2 inference through the hybrid CPU–FPGA pipeline. The frontend acts as a control and visualization layer, sending prompts to the backend, displaying generated text in real time, and surfacing performance analytics such as token counts, latency, and FPGA accelerator utilization for each run.
 
 <p align="center">
   <sub><i>Live Demo: Promt-based GPT-2 Inference with Real-Time FPGA Performance Analytics</i></sub>
@@ -110,6 +110,10 @@ The internal RTL architecture consists of modules synchronized for deterministic
 <p align="center">
   <img src="https://github.com/user-attachments/assets/f9b8fa88-b1b9-4acd-a2e1-acb8e0d65992" width="600" />
 </p>
-  
+
+## References
+
+**[1]** N. P. Jouppi *et al.*, "In-datacenter performance analysis of a tensor processing unit," in *Proc. 44th Annu. Int. Symp. Comput. Archit. (ISCA)*, Toronto, ON, Canada, 2017, pp. 1–12. Available: https://arxiv.org/abs/1704.04760
+
 ---
 *Developed by Jack Polloway and Faraz Fashizedeh partially for nwHacks 2026.*
