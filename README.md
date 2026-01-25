@@ -12,7 +12,7 @@ LLM inference is dominated by matrix multiplication operations (GEMMs) within at
   <sub><i>Standard Memory Hiarchy Design</i></sub>
 </p>
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/f8b9e9ff-cad9-4119-8352-288286721726" width="600" />
+  <img src="https://github.com/user-attachments/assets/f8b9e9ff-cad9-4119-8352-288286721726" width="400" />
 </p>
 
 ## Solution Highlights
@@ -21,7 +21,7 @@ LLM inference is dominated by matrix multiplication operations (GEMMs) within at
   <sub><i>Data Movement on the Systolic Array and FPGA Plane in Operation</i></sub>
 </p>
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/53bc1dd6-7ad0-4c98-80dd-dd503108c81f" width="600" />
+  <img src="https://github.com/user-attachments/assets/53bc1dd6-7ad0-4c98-80dd-dd503108c81f" width="400" />
 </p>
 
 * **Custom Systolic Array:** Developed a scalable systolic array architecture in Verilog to maximize data reuse and achieve 100% compute utilization during matrix operations.
