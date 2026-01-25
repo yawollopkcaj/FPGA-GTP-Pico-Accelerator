@@ -47,6 +47,12 @@ LLM inference is dominated by matrix multiplication (attention and linear layers
 
 *Note: The current system bottleneck is the UART link, resulting in the hardware being idle 99% of the time while waiting for data. The underlying architecture, however, proves that hardware-optimized math is significantly more efficient than general-purpose CPU compute.*
 
+## Tech Stack
+* **Hardware Description:** Verilog / RTL
+* **Compute Platforms:** Altera/Intel Cyclone V FPGA
+* **Software/Tooling:** Python (Inference Terminal), UART/Serial Communication, Int8 Quantization 
+* **Architecture:** Systolic Arrays, Von Neumann Architecture Analysis, Transformer/Attention Mechanisms
+  
 ## Architecture Overview
 
 The system optimizes the **Scaled Dot-Product Attention** mechanism found in Transformer models, which requires a high volume of multiplications. By implementing hardware-level MatMul units, Q-Tensor accelerates the core mathematical requirements of modern LLMs.
@@ -67,11 +73,11 @@ The internal RTL architecture consists of modules synchronized for deterministic
 *  **Output Packer:** Collects processed data to be sent back via the UART output driver.
 *  **UART Tx:** Handles the 115200 baud link for outgoing data.
 
-## Tech Stack
-* **Hardware Description:** Verilog / RTL
-* **Compute Platforms:** Altera/Intel Cyclone V FPGA
-* **Software/Tooling:** Python (Inference Terminal), UART/Serial Communication, Int8 Quantization 
-* **Architecture:** Systolic Arrays, Von Neumann Architecture Analysis, Transformer/Attention Mechanisms
+## Software Integration
 
+* **GPT-2 Injection Point**: Modified a pure NumPy GPT-2 pipeline to call the FPGA accelerator for matrix multiplication, enabling a working hybrid inference demo without heavyweight ML frameworks.
+* **Quantized Data Path**: Inputs are quantized to int8 on the host, computed as int8 to int32 on FPGA, then converted back for integration. This mirrors real accelerator arithmetic: small inputs, wide accumulators.
+* **Verification Harness**: Built a CPU reference path that runs the same quantized GEMM and compares element-by-element against FPGA output, ensuring bit-exact correctness across randomized tests.
+  
 ---
 *Developed by Jack Polloway and Faraz Fashizedeh for nwHacks 2026.*
