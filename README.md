@@ -102,7 +102,13 @@ The internal RTL architecture consists of modules synchronized for deterministic
 
 ## Demo
 
-**Interactive Inference Interface**: To showcase the system end-to-end, we built a lightweight web interface that allows users to enter prompts and run live GPT-2 inference through the hybrid CPU–FPGA pipeline. The frontend acts as a control and visualization layer, sending prompts to the backend, displaying generated text in real time, and surfacing performance analytics such as token counts, latency, and FPGA accelerator utilization for each run.
+*To showcase the system end-to-end, we built a lightweight web interface that allows users to enter prompts and run live GPT-2 inference through the hybrid CPU–FPGA pipeline. The frontend acts as a control and visualization layer, sending prompts to the backend, displaying generated text in real time, and surfacing performance analytics such as token counts, latency, and FPGA accelerator utilization for each run.*
+
+
+
+![Live Demo: Promt-based GPT-2 Inference with Real-Time FPGA Performance Analytics](https://github.com/user-attachments/assets/4c5e7167-13dd-413d-87f0-c5967eccc440)
+
+
   
 ---
 *Developed by Jack Polloway and Faraz Fashizedeh partially for nwHacks 2026.*
