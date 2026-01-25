@@ -82,9 +82,8 @@ The system optimizes the **Scaled Dot-Product Attention** mechanism found in Tra
   <sub><i>High-Level Component Diagram</i></sub>
 </p>
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/6817be4f-8d0b-4c37-b2e9-73fd62d8cf30" width="600" />
+  <img src="https://github.com/user-attachments/assets/695bb156-5592-43cd-aefa-f5eb9768133c" width="600" />
 </p>
-<img width="841" height="401" alt="QTensor_Diagram drawio (1)" src="https://github.com/user-attachments/assets/695bb156-5592-43cd-aefa-f5eb9768133c" />
 
 ### FPGA Component Diagram
 The internal RTL architecture consists of modules synchronized for deterministic I/O:
