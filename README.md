@@ -49,7 +49,7 @@ LLM inference is dominated by matrix multiplication operations (GEMMs) within at
   <sub><i>Energy per 4x4 GEMM (Quartus Prime Power Analyzer)</i></sub>
 </p>
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/4f12b3a4-f8d4-4676-872f-bebfe1e75780" width="200" />
+  <img src="https://github.com/user-attachments/assets/4f12b3a4-f8d4-4676-872f-bebfe1e75780" width="400" />
 </p>
 
 <p align="center">
@@ -99,6 +99,10 @@ The internal RTL architecture consists of modules synchronized for deterministic
 * **GPT-2 Injection Point**: Modified a pure NumPy GPT-2 pipeline to call the FPGA accelerator for matrix multiplication, enabling a working hybrid inference demo without heavyweight ML frameworks.
 * **Quantized Data Path**: Inputs are quantized to int8 on the host, computed as int8 to int32 on FPGA, then converted back for integration. This mirrors real accelerator arithmetic: small inputs, wide accumulators.
 * **Verification Harness**: Built a CPU reference path that runs the same quantized GEMM and compares element-by-element against FPGA output, ensuring bit-exact correctness across randomized tests.
+
+## Demo
+
+**Interactive Inference Interface**: To showcase the system end-to-end, we built a lightweight web interface that allows users to enter prompts and run live GPT-2 inference through the hybrid CPU–FPGA pipeline. The frontend acts as a control and visualization layer, sending prompts to the backend, displaying generated text in real time, and surfacing performance analytics such as token counts, latency, and FPGA accelerator utilization for each run.
   
 ---
 *Developed by Jack Polloway and Faraz Fashizedeh partially for nwHacks 2026.*
